@@ -99,7 +99,12 @@ bool Carte::operator==(const Carte& c) {
 	return(this->status == c.status) && (strcmp(this->titlu, c.titlu) == 0) && (strcmp(this->autor, c.autor) == 0);
 }
 ostream& operator<<(ostream& os, const Carte& c) {
-	os << "Cartea--->Titlu: " << c.titlu << ",Autor: " << c.autor << ",Status: " << c.status << " ;" << endl;
+	//os << "Cartea--->Titlu: " << c.titlu << ",Autor: " << c.autor << ",Status: " << c.status << ";" << endl;
+	//return os;
+	if(c.status==1)
+		os << "Cartea--->Titlu: " << c.titlu << ",Autor: " << c.autor << ",Status:imprumutat " << ";" << endl;
+	else
+		os << "Cartea--->Titlu: " << c.titlu << ",Autor: " << c.autor << ",Status:neimprumutat " << ";" << endl;
 	return os;
 }
 istream& operator>>(istream& is, Carte& c) {

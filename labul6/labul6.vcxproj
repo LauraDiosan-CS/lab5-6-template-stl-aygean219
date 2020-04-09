@@ -139,13 +139,24 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="biblioteca.h" />
+    <ClInclude Include="teste_repo_file.h" />
     <ClInclude Include="repo.h" />
+    <ClInclude Include="repo_file.h" />
+    <ClInclude Include="service.h" />
     <ClInclude Include="teste.h" />
+    <ClInclude Include="teste_repo.h" />
+    <ClInclude Include="teste_service.h" />
+    <ClInclude Include="ui.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="biblioteca.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="service.cpp" />
     <ClCompile Include="teste.cpp" />
+    <ClCompile Include="teste_repo.cpp" />
+    <ClCompile Include="teste_repo_file.cpp" />
+    <ClCompile Include="teste_service.cpp" />
+    <ClCompile Include="ui.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

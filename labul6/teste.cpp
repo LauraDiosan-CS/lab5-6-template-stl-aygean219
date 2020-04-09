@@ -30,6 +30,6 @@ void testerepo() {
 	strcpy_s(autor1, sizeof "aaa", "aaa");
 	strcpy_s(titlu1, sizeof "bbb", "bbb");
 	Carte c1(titlu1, autor1, true);
-	rep.insert(c1);
-	assert(rep.get_len() == 1);
+	rep.addCarte(c1);
+	assert(rep.get_size() == 1);
 }

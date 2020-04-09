@@ -1,0 +1,44 @@
+﻿  biblioteca.cpp
+  main.cpp
+  service.cpp
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\repo.h(56,18): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\repo.h(53): message : while compiling class template member function 'int Repo<Carte>::findCarte(T)'
+          with
+          [
+              T=Carte
+          ]
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\service.cpp(37): message : see reference to function template instantiation 'int Repo<Carte>::findCarte(T)' being compiled
+          with
+          [
+              T=Carte
+          ]
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\service.h(9): message : see reference to class template instantiation 'Repo<Carte>' being compiled
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\repo.h(64,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\repo.h(63): message : while compiling class template member function 'int Repo<Carte>::get_size(void)'
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\service.cpp(46): message : see reference to function template instantiation 'int Repo<Carte>::get_size(void)' being compiled
+  teste.cpp
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\repo.h(64,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\repo.h(63): message : while compiling class template member function 'int Repo<Carte>::get_size(void)'
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\teste.cpp(34): message : see reference to function template instantiation 'int Repo<Carte>::get_size(void)' being compiled
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\teste.cpp(27): message : see reference to class template instantiation 'Repo<Carte>' being compiled
+  teste_repo.cpp
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\repo.h(56,18): warning C4244: 'return': conversion from '__int64' to 'int', possible loss of data
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\repo.h(53): message : while compiling class template member function 'int Repo<Carte>::findCarte(T)'
+          with
+          [
+              T=Carte
+          ]
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\teste_repo.cpp(86): message : see reference to function template instantiation 'int Repo<Carte>::findCarte(T)' being compiled
+          with
+          [
+              T=Carte
+          ]
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\teste_repo.cpp(7): message : see reference to class template instantiation 'Repo<Carte>' being compiled
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\repo.h(64,1): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\repo.h(63): message : while compiling class template member function 'int Repo<Carte>::get_size(void)'
+C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\labul6\teste_repo.cpp(20): message : see reference to function template instantiation 'int Repo<Carte>::get_size(void)' being compiled
+  teste_repo_file.cpp
+  teste_service.cpp
+  ui.cpp
+  Generating Code...
+  labul6.vcxproj -> C:\Users\skump\OneDrive\Documents\lab5-6-template-stl-aygean219\x64\Debug\labul6.exe
