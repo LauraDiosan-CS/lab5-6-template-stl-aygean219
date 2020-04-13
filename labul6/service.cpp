@@ -6,27 +6,45 @@ Service::Service()
 {
 
 }
-Service::Service(Repo<Carte>& r)
+Service::Service(RepoFile<Carte>& r)
 {
 	repo = r;
 }
-void Service::setRepo(Repo<Carte>& r)
+void Service::setRepo(RepoFile<Carte>& r)
 {
 	repo = r;
 }
 void Service::addC(char* titlu, char* autor, bool status)
 {
 	Carte c(titlu, autor, status);
-	repo.addCarte(c);
+	repo.addCarteF(c);
 }
-int Service::deleteC(Carte c)
+int Service::deleteC(char* titlu)
 {
-	return repo.deleteCarte(c);
+	deque<Carte> carti = repo.get_all();
+	for (Carte current : carti) {
+		if (strcmp(current.getTitlu(), titlu) == 0)
+		{
+			Carte c(titlu, current.getAutor(), current.getStatus());
+			return repo.deleteCarteF(c);
+		}
+	}
 }
 void Service::updateC(Carte c, char* titlu, char* autor, bool status)
 {	
-	repo.updCarte(c,Carte( titlu, autor, status));
+	repo.updCarteF(c,Carte( titlu, autor, status));
 
+}
+void Service::updateT(char* titlu, char* newTitlu, char* newAutor, bool newStatus)
+{
+	deque<Carte> carti = repo.get_all();
+	for (Carte current : carti) {
+		if (strcmp(current.getTitlu(), titlu) == 0)
+		{
+			Carte c(titlu, current.getAutor(), current.getStatus());
+			repo.updCarteF(c, Carte(newTitlu, newAutor, newStatus));
+		}
+	}
 }
 Carte Service::getC(int pos)
 {
@@ -57,16 +75,54 @@ int Service::get_sizeC() {
 
 	}
 }*/
-void Service::prop1(deque<Carte> carti,char* titlu)
+int Service::titlul(Carte carte, char* titlu)
 {
+	if (strcmp(carte.getTitlu(), titlu) == 0)
+		return 1;
+	return 0;
+}
+int Service::prop1(deque<Carte> carti,char* titlu)
+{
+	int ok;
 	for (Carte current : carti) {
-		
-		if ((strcmp(current.getTitlu(), titlu) == 0) && (current.getStatus() == false))
+		ok = titlul(current, titlu);
+		if ((current.getStatus() == false) && (ok == 1))
+		{	repo.updCarteF(current, Carte(titlu, current.getAutor(), 1));
+			ok = 2;//daca titlul este gasit si este disponibil
+		}
+		if (ok!=0)
 		{
-			
-			repo.updCarte(current, Carte(titlu, current.getAutor(), 1));
-			
+			return ok;//l a gasit ,s-a realizat opresc programu si returnez=2 sau ==1 a gasit dar nu e disponibil
+		}
+		
+		}
+	return 0;//daca nu este gasit titlul ok==0
+}
+int Service::prop2(deque<Carte> carti, char* titlu)
+{
+	int ok;
+	for (Carte current : carti) {
+		ok = titlul(current, titlu);
+		if ((current.getStatus() == true) && (ok == 1))
+		{
+			repo.updCarteF(current, Carte(titlu, current.getAutor(), 0));
+			ok = 2;//daca titlul este gasit si este imprumutat
+		}
+		if (ok != 0)
+		{
+			return ok;//l a gasit ,s-a realizat opresc programu si returnez=2 sau ==1 a gasit dar nu e imprumutat
+		}
+
+	}
+	return 0;//daca nu este gasit titlul ok==0
+}
+deque <Carte> Service::filterByAutor(deque<Carte> carti,char* autor)
+{
+	deque<Carte> rez;
+	for (Carte current : carti) {
+		if ((strcmp(current.getAutor(), autor) == 0)&&(current.getStatus()==0) ){
+			rez.push_back(current);
 		}
 	}
-
+	return rez;
 }

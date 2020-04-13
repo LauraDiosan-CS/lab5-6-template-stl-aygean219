@@ -101,10 +101,17 @@ bool Carte::operator==(const Carte& c) {
 ostream& operator<<(ostream& os, const Carte& c) {
 	//os << "Cartea--->Titlu: " << c.titlu << ",Autor: " << c.autor << ",Status: " << c.status << ";" << endl;
 	//return os;
-	if(c.status==1)
-		os << "Cartea--->Titlu: " << c.titlu << ",Autor: " << c.autor << ",Status:imprumutat " << ";" << endl;
+	if (&os == &cout)
+	{
+		if (c.status == 1)
+			os << "Cartea--->Titlu: " << c.titlu << ",Autor: " << c.autor << ",Status:imprumutat " << ";" << endl;
+		else
+			os << "Cartea--->Titlu: " << c.titlu << ",Autor: " << c.autor << ",Status:neimprumutat " << ";" << endl;
+	}
 	else
-		os << "Cartea--->Titlu: " << c.titlu << ",Autor: " << c.autor << ",Status:neimprumutat " << ";" << endl;
+	{
+	os << c.titlu << " " << c.autor << " "<<c.status << endl;
+	}
 	return os;
 }
 istream& operator>>(istream& is, Carte& c) {

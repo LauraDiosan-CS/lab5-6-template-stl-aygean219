@@ -69,4 +69,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Carti.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="carti_teste.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Carti_out.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="carti_teste_out.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

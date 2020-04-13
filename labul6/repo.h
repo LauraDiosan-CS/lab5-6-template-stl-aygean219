@@ -2,9 +2,9 @@
 #include "biblioteca.h"
 #include <deque>
 using namespace std;
-template <typename T>
+template <class T>
 class Repo {
-private: 
+protected:
 	deque <T> carti;
 public:
 	Repo();
@@ -17,18 +17,18 @@ public:
 	T getCarte(int);
 	deque<T> get_all();
 };
-template<typename T>
+template<class T>
 Repo<T>::Repo()
 {
 }
 
-template<typename T>
+template<class T>
 void Repo<T>::addCarte(T carte)
 {
 	this->carti.push_back(carte);
 }
 //titlu,autor,status
-template<typename T>
+template<class T>
 int Repo<T>::updCarte(T carte, T newCarte)
 {
 	typename deque<T>::iterator it = find(carti.begin(), carti.end(), carte);
@@ -38,7 +38,7 @@ int Repo<T>::updCarte(T carte, T newCarte)
 	}
 	return -1;
 }
-template<typename T>
+template<class T>
 int Repo<T>::deleteCarte(T carte)
 {
 	typename deque<T>::iterator it = find(carti.begin(), carti.end(), carte);
@@ -48,35 +48,35 @@ int Repo<T>::deleteCarte(T carte)
 	}
 	return - 1;
 }
-template<typename T>
+template<class T>
 int Repo<T>::findCarte(T carte)
 {
-	deque<Carte>::iterator it = find(carti.begin(), carti.end(), carte);
+	typename deque<T>::iterator it = find(carti.begin(), carti.end(), carte);
 	if (it != carti.end())
 		return distance(carti.begin(), it);
 	return -1;
 
 }
 
-template<typename T>
+template<class T>
 int Repo<T>::get_size()
 {
 	return this->carti.size();
 
 }
-template<typename T>
+template<class T>
 T Repo<T>::getCarte(int pos)
 {
 	return this->carti[pos];
 
 }
-template<typename T>
+template<class T>
 deque<T> Repo<T>::get_all()
 {
 	return this->carti;
 }
 
-template<typename T>
+template<class T>
 Repo<T>::~Repo()
 {
 }

@@ -6,6 +6,7 @@ private:
 	void testUpdCarte();
 	void testDelCarte();
 	void testImprumutCarte();
+	void testReturCarte();
 public:
 	void testAll2();
 };

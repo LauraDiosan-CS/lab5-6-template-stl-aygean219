@@ -1,3 +1,10 @@
 #pragma once
 #include "repo_file.h"
-void testLoadFromFile();
+class TestRepoFile
+{
+private:
+	void testLoadFromFile();
+public:
+	void testAll3();
+
+};

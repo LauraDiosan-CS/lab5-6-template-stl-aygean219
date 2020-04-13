@@ -8,6 +8,7 @@ private:
 	void showAll();
 	void updCarte();
 	void prop1();
+	void prop2();
 public:
 	UI();
 	UI(Service&);

@@ -158,6 +158,12 @@
     <ClCompile Include="teste_service.cpp" />
     <ClCompile Include="ui.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Carti.txt" />
+    <Text Include="Carti_out.txt" />
+    <Text Include="carti_teste.txt" />
+    <Text Include="carti_teste_out.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
